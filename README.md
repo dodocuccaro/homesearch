@@ -2,7 +2,9 @@
 
 A modern, responsive holiday accommodation search and comparison website inspired by Airbnb and Booking.com for the search interface and Trovaprezzi.it for results display.
 
-> **👀 Want to see the website?** Check out [VIEWING.md](VIEWING.md) for step-by-step instructions on how to view it locally or deploy it online!
+> ## 👀 **[➡️ CLICK HERE TO SEE WHERE YOU CAN VIEW THE WEBSITE](HOW-TO-VIEW.md)**
+>
+> **Quick Start:** `cd homesearch && python3 -m http.server 8000` then visit `http://localhost:8000`
 
 ![HomeSearch](https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1200&auto=format&fit=crop)
 

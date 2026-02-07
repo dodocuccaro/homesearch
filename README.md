@@ -4,9 +4,22 @@ A modern, responsive holiday accommodation search and comparison website inspire
 
 > ## 👀 **HOW TO VIEW YOUR WEBSITE:**
 >
-> - 🔰 **[BEGINNERS GUIDE (START HERE!)](BEGINNERS-GUIDE.md)** ⭐ - Step-by-step for first-timers
-> - 📖 **[HOW-TO-VIEW.md](HOW-TO-VIEW.md)** - Complete instructions with screenshots
-> - ⚡ **[QUICK-START.md](QUICK-START.md)** - Quick reference for experienced users
+> ### 🔰 **For Beginners (Start Here!)**
+> - **[BEGINNERS-GUIDE.md](BEGINNERS-GUIDE.md)** ⭐ - Step-by-step for first-timers
+> - **[VISUAL-GUIDE.md](VISUAL-GUIDE.md)** 🎨 - Pictures and diagrams
+> - **[FAQ.md](FAQ.md)** ❓ - Common questions answered
+>
+> ### 📚 **For Everyone Else**
+> - **[HOW-TO-VIEW.md](HOW-TO-VIEW.md)** - Complete instructions
+> - **[QUICK-START.md](QUICK-START.md)** - Quick reference
+>
+> ### ⚡ **Super Quick Start**
+> Open Terminal/Command Prompt and type:
+> ```bash
+> cd /home/runner/work/homesearch/homesearch
+> python3 -m http.server 8000
+> ```
+> Then visit: `http://localhost:8000` in your browser
 
 ![HomeSearch](https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1200&auto=format&fit=crop)
 

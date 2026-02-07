@@ -2,6 +2,8 @@
 
 > **Don't worry!** This guide explains everything step-by-step, even if you've never used a command line before.
 
+> **🎨 Want pictures?** Check out [VISUAL-GUIDE.md](VISUAL-GUIDE.md) for diagrams and flow charts!
+
 ---
 
 ## 🤔 Confused About the Instructions?

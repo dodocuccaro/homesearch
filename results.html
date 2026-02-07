@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse and compare holiday accommodation search results">
+    <title>Search Results - HomeSearch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 2L3 12V30H13V20H19V30H29V12L16 2Z" fill="currentColor"/>
+                    </svg>
+                    <span>HomeSearch</span>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Search</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="results-page">
+        <div class="container">
+            <div class="results-header">
+                <div class="search-summary">
+                    <h1>Search Results</h1>
+                    <p id="searchInfo" class="search-info"></p>
+                </div>
+                <button class="modify-search-btn" onclick="window.location.href='index.html'">
+                    Modify Search
+                </button>
+            </div>
+
+            <div class="results-info">
+                <p id="resultsCount" class="results-count"></p>
+                <div class="sort-info">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 2L8 14M8 14L12 10M8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Sorted by: Price (Low to High)</span>
+                </div>
+            </div>
+
+            <div id="resultsContainer" class="results-grid">
+                <!-- Results will be dynamically inserted here -->
+            </div>
+
+            <div id="noResults" class="no-results" style="display: none;">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M32 8C18.75 8 8 18.75 8 32C8 45.25 18.75 56 32 56C45.25 56 56 45.25 56 32C56 18.75 45.25 8 32 8ZM32 52C21 52 12 43 12 32C12 21 21 12 32 12C43 12 52 21 52 32C52 43 43 52 32 52ZM28 22L36 22L36 42L28 42L28 22Z" fill="#CBD5E1"/>
+                </svg>
+                <h2>No results found</h2>
+                <p>Try adjusting your search criteria</p>
+                <button class="btn-primary" onclick="window.location.href='index.html'">
+                    Back to Search
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>HomeSearch</h4>
+                    <p>Your trusted holiday accommodation comparison platform</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Popular Destinations</h4>
+                    <ul>
+                        <li><a href="#">Paris, France</a></li>
+                        <li><a href="#">Rome, Italy</a></li>
+                        <li><a href="#">Barcelona, Spain</a></li>
+                        <li><a href="#">Amsterdam, Netherlands</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HomeSearch. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/results.js"></script>
+</body>
+</html>

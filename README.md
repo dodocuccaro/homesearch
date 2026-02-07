@@ -2,24 +2,16 @@
 
 A modern, responsive holiday accommodation search and comparison website inspired by Airbnb and Booking.com for the search interface and Trovaprezzi.it for results display.
 
-> ## 👀 **HOW TO VIEW YOUR WEBSITE:**
+> ## 🎯 **[➡️ CLICK HERE: START-HERE.md](START-HERE.md)** ⭐
 >
-> ### 🔰 **For Beginners (Start Here!)**
-> - **[BEGINNERS-GUIDE.md](BEGINNERS-GUIDE.md)** ⭐ - Step-by-step for first-timers
-> - **[VISUAL-GUIDE.md](VISUAL-GUIDE.md)** 🎨 - Pictures and diagrams
-> - **[FAQ.md](FAQ.md)** ❓ - Common questions answered
+> ### Not sure which guide to read? START-HERE will help you choose!
 >
-> ### 📚 **For Everyone Else**
-> - **[HOW-TO-VIEW.md](HOW-TO-VIEW.md)** - Complete instructions
-> - **[QUICK-START.md](QUICK-START.md)** - Quick reference
->
-> ### ⚡ **Super Quick Start**
-> Open Terminal/Command Prompt and type:
-> ```bash
-> cd /home/runner/work/homesearch/homesearch
-> python3 -m http.server 8000
-> ```
-> Then visit: `http://localhost:8000` in your browser
+> ### 📚 **Quick Links to All Guides:**
+> - 🔰 **[BEGINNERS-GUIDE.md](BEGINNERS-GUIDE.md)** - Never used Terminal before? Start here!
+> - 🎨 **[VISUAL-GUIDE.md](VISUAL-GUIDE.md)** - Pictures and diagrams
+> - ❓ **[FAQ.md](FAQ.md)** - Common questions answered
+> - 📖 **[HOW-TO-VIEW.md](HOW-TO-VIEW.md)** - Complete instructions
+> - ⚡ **[QUICK-START.md](QUICK-START.md)** - Just the commands
 
 ![HomeSearch](https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1200&auto=format&fit=crop)
 

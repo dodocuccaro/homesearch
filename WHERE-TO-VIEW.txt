@@ -4,13 +4,17 @@
 
 🎉 YOUR WEBSITE IS READY AND WORKING! 🎉
 
+🔰 FIRST TIME? READ: BEGINNERS-GUIDE.md for step-by-step help!
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 🚀 OPTION 1: VIEW LOCALLY (FASTEST - 30 SECONDS)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Step 1: Open Terminal/Command Prompt
-Step 2: Run these commands:
+        (Windows: Search "cmd" | Mac: Search "Terminal")
+
+Step 2: Type these commands and press Enter after each:
 
     cd /home/runner/work/homesearch/homesearch
     python3 -m http.server 8000
@@ -21,15 +25,18 @@ Step 3: Open your browser and visit:
 
 That's it! The website will load immediately! ✨
 
+⚠️  IMPORTANT: These are COMMANDS you TYPE in Terminal, 
+    NOT code you insert into files!
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 🌐 OPTION 2: DEPLOY TO GITHUB PAGES (PUBLIC URL)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Step 1: Merge this Pull Request to 'main' branch
-Step 2: Go to Repository Settings → Pages
-Step 3: Select 'main' branch as source
-Step 4: Click Save
+Step 1: Go to your GitHub repository → Pull requests tab
+Step 2: Click on the pull request, then "Merge pull request"
+Step 3: Go to Repository Settings → Pages
+Step 4: Select 'main' branch as source, click Save
 
 Your website will be live at:
 

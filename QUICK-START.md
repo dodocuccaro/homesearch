@@ -1,21 +1,28 @@
 # 🚀 Quick Reference Card
 
+> **🔰 First time?** Read **[BEGINNERS-GUIDE.md](BEGINNERS-GUIDE.md)** for step-by-step instructions!
+
 ## Where Can I See the Website?
 
 ### Option 1: Local Server (Recommended)
+
+**In your Terminal/Command Prompt, type:**
+
 ```bash
 cd /home/runner/work/homesearch/homesearch
 python3 -m http.server 8000
 ```
-**URL:** http://localhost:8000
+**Then visit:** http://localhost:8000
 
-### Option 2: GitHub Pages (Public)
-1. Merge PR to `main`
-2. Settings → Pages → Select `main` branch
-3. **URL:** https://dodocuccaro.github.io/homesearch/
+### Option 2: GitHub Pages (Public URL)
+
+1. Go to your GitHub repository
+2. Merge the pull request (green "Merge" button)
+3. Go to Settings → Pages → Select `main` branch → Save
+4. **Visit:** https://dodocuccaro.github.io/homesearch/
 
 ### Option 3: Direct File
-Double-click `index.html` *(not recommended)*
+Double-click `index.html` *(limited functionality)*
 
 ---
 

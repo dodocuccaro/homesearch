@@ -8,9 +8,13 @@
 
 ## 🚀 **3 Ways to View Your Website**
 
+> **⚠️ New to this?** Check out **[BEGINNERS-GUIDE.md](BEGINNERS-GUIDE.md)** for ultra-simple step-by-step instructions!
+
 ### 1. 📱 **View It RIGHT NOW Locally**
 
 The easiest way to see your website immediately:
+
+**What you need to do:** Open your Terminal (Mac/Linux) or Command Prompt (Windows) and type these commands:
 
 ```bash
 # Navigate to your project folder
@@ -20,12 +24,19 @@ cd /home/runner/work/homesearch/homesearch
 python3 -m http.server 8000
 ```
 
-Then open your browser and go to:
+**Where to type these?**
+- **Windows:** Search for "cmd" and open Command Prompt
+- **Mac:** Search for "Terminal" and open it
+- **Linux:** Press Ctrl+Alt+T to open Terminal
+
+**Then** open your web browser and go to:
 ```
 http://localhost:8000
 ```
 
 **That's it!** You'll see exactly what's in the screenshot above. ✨
+
+> **Note:** Keep the Terminal/Command Prompt window open while viewing the website. Press Ctrl+C to stop the server when done.
 
 ---
 
@@ -33,22 +44,34 @@ http://localhost:8000
 
 To make it accessible to everyone on the internet:
 
-#### **Step 1: Merge this Pull Request**
-1. Go to: https://github.com/dodocuccaro/homesearch/pulls
-2. Open this PR: "Create Homesearch - Holiday Search Comparison Website"
-3. Click **"Merge pull request"**
-4. Click **"Confirm merge"**
+> **📝 What does this mean?** Currently, your website files are ready but not yet "published" as the main version. This section explains how to publish them and get a public URL anyone can visit.
 
-#### **Step 2: Enable GitHub Pages**
+#### **Step 1: Publish Your Changes on GitHub**
+
+Your website code is currently in a separate "branch" (think of it as a draft). To make it the official version:
+
+1. Go to: https://github.com/dodocuccaro/homesearch/pulls
+2. You'll see a pull request (a request to publish your changes)
+3. Click on the pull request titled "Create Homesearch - Holiday Search Comparison Website"
+4. Click the green **"Merge pull request"** button (this publishes your changes)
+5. Click **"Confirm merge"**
+
+✅ Your code is now published!
+
+#### **Step 2: Enable Free Website Hosting**
+
+Now that your code is published, tell GitHub to host it as a website:
+
 1. Go to your repository: https://github.com/dodocuccaro/homesearch
-2. Click **Settings** (top navigation)
-3. Click **Pages** (left sidebar)
-4. Under "Source":
-   - Branch: Select **`main`**
-   - Folder: Select **`/ (root)`**
+2. Click **Settings** (top navigation menu)
+3. Click **Pages** (in the left sidebar menu)
+4. Under "Source" (or "Branch"):
+   - In the dropdown, select **`main`**
+   - Keep the folder as **`/ (root)`**
 5. Click **Save**
 
 #### **Step 3: Access Your Live Website**
+
 After 1-2 minutes, your website will be live at:
 
 ```

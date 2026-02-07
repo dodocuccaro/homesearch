@@ -4,11 +4,15 @@
 
 ![HomeSearch Website Running](https://github.com/user-attachments/assets/a15caad2-0c4d-4889-a667-b4108d4173ee)
 
+> ## ⚠️ **Viewing on GitHub? Links might be broken**
+> If links show "404 not found", these documentation files are in the PR branch only.
+> **[View all guides here →](https://github.com/dodocuccaro/homesearch/tree/copilot/create-holiday-search-website)**
+
 ---
 
 ## 🚀 **3 Ways to View Your Website**
 
-> **⚠️ New to this?** Check out **[BEGINNERS-GUIDE.md](BEGINNERS-GUIDE.md)** for ultra-simple step-by-step instructions!
+> **⚠️ New to this?** Check out **[BEGINNERS-GUIDE.md](https://github.com/dodocuccaro/homesearch/blob/copilot/create-holiday-search-website/BEGINNERS-GUIDE.md)** for ultra-simple step-by-step instructions!
 
 ### 1. 📱 **View It RIGHT NOW Locally**
 

@@ -2,16 +2,29 @@
 
 A modern, responsive holiday accommodation search and comparison website inspired by Airbnb and Booking.com for the search interface and Trovaprezzi.it for results display.
 
-> ## 🎯 **[➡️ CLICK HERE: START-HERE.md](START-HERE.md)** ⭐
+> ## ⚠️ **VIEWING THIS ON GITHUB?**
+> 
+> If you're viewing this on GitHub and links show "page not found", you're viewing the PR branch. The documentation files exist here in this branch but not in `main` yet.
+>
+> **Two ways to view the guides:**
+> 1. **After PR is merged:** All links will work normally
+> 2. **Right now:** Click "Files changed" tab above, then click on any .md file to view it
+> 
+> Or [**view all files in this branch →**](https://github.com/dodocuccaro/homesearch/tree/copilot/create-holiday-search-website)
+
+---
+
+> ## 🎯 **Documentation Guides** ⭐
 >
 > ### Not sure which guide to read? START-HERE will help you choose!
 >
 > ### 📚 **Quick Links to All Guides:**
-> - 🔰 **[BEGINNERS-GUIDE.md](BEGINNERS-GUIDE.md)** - Never used Terminal before? Start here!
-> - 🎨 **[VISUAL-GUIDE.md](VISUAL-GUIDE.md)** - Pictures and diagrams
-> - ❓ **[FAQ.md](FAQ.md)** - Common questions answered
-> - 📖 **[HOW-TO-VIEW.md](HOW-TO-VIEW.md)** - Complete instructions
-> - ⚡ **[QUICK-START.md](QUICK-START.md)** - Just the commands
+> - 🔰 **[BEGINNERS-GUIDE.md](https://github.com/dodocuccaro/homesearch/blob/copilot/create-holiday-search-website/BEGINNERS-GUIDE.md)** - Never used Terminal before? Start here!
+> - 🎨 **[VISUAL-GUIDE.md](https://github.com/dodocuccaro/homesearch/blob/copilot/create-holiday-search-website/VISUAL-GUIDE.md)** - Pictures and diagrams
+> - ❓ **[FAQ.md](https://github.com/dodocuccaro/homesearch/blob/copilot/create-holiday-search-website/FAQ.md)** - Common questions answered
+> - 📖 **[HOW-TO-VIEW.md](https://github.com/dodocuccaro/homesearch/blob/copilot/create-holiday-search-website/HOW-TO-VIEW.md)** - Complete instructions
+> - ⚡ **[QUICK-START.md](https://github.com/dodocuccaro/homesearch/blob/copilot/create-holiday-search-website/QUICK-START.md)** - Just the commands
+> - 🎯 **[START-HERE.md](https://github.com/dodocuccaro/homesearch/blob/copilot/create-holiday-search-website/START-HERE.md)** - Choose the right guide
 
 ![HomeSearch](https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1200&auto=format&fit=crop)
 

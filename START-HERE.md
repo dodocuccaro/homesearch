@@ -2,6 +2,11 @@
 
 > **Confused about where to start?** This page will guide you to the right documentation!
 
+> ## ⚠️ **Links Not Working on GitHub?**
+> If clicking links shows "page not found", these files are in the PR branch but not merged to `main` yet.
+> 
+> **View guides now:** [Click here to see all files →](https://github.com/dodocuccaro/homesearch/tree/copilot/create-holiday-search-website)
+
 ---
 
 ## ❓ Answer This Question:
@@ -14,17 +19,17 @@
 
 ### Read These Guides (in this order):
 
-1. **[BEGINNERS-GUIDE.md](BEGINNERS-GUIDE.md)** ⭐ **START HERE!**
+1. **[BEGINNERS-GUIDE.md](https://github.com/dodocuccaro/homesearch/blob/copilot/create-holiday-search-website/BEGINNERS-GUIDE.md)** ⭐ **START HERE!**
    - Complete step-by-step guide
    - Explains everything from scratch
    - No prior knowledge needed
 
-2. **[VISUAL-GUIDE.md](VISUAL-GUIDE.md)** 🎨 (Optional)
+2. **[VISUAL-GUIDE.md](https://github.com/dodocuccaro/homesearch/blob/copilot/create-holiday-search-website/VISUAL-GUIDE.md)** 🎨 (Optional)
    - Pictures and diagrams
    - Visual flow charts
    - Helpful if you're a visual learner
 
-3. **[FAQ.md](FAQ.md)** ❓ (If you have questions)
+3. **[FAQ.md](https://github.com/dodocuccaro/homesearch/blob/copilot/create-holiday-search-website/FAQ.md)** ❓ (If you have questions)
    - Common questions answered
    - Troubleshooting guide
    - Quick answers

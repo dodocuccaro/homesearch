@@ -160,13 +160,9 @@ function sortPropertiesByPrice(props) {
 // Generate star rating HTML
 function generateStars(rating) {
     const fullStars = Math.floor(rating);
-    const hasHalfStar = rating % 1 !== 0;
     let starsHTML = '';
     
     for (let i = 0; i < fullStars; i++) {
-        starsHTML += '⭐';
-    }
-    if (hasHalfStar) {
         starsHTML += '⭐';
     }
     

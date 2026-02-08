@@ -259,14 +259,6 @@ function displayResults(searchParams) {
     document.getElementById('resultsCount').textContent = `${sortedProperties.length} properties found`;
 }
 
-// View property details (placeholder function) - now opens external URL
-function viewProperty(propertyId) {
-    const property = properties.find(p => p.id === propertyId);
-    if (property) {
-        window.open(property.externalUrl, '_blank');
-    }
-}
-
 // Initialize page
 document.addEventListener('DOMContentLoaded', function() {
     // Load search parameters

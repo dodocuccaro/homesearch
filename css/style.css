@@ -392,6 +392,7 @@ body {
     color: #FFA500;
     font-size: 0.875rem;
     margin-top: 0.5rem;
+    white-space: nowrap;
 }
 
 .property-location {
@@ -466,16 +467,14 @@ body {
     padding: 0.75rem 1.25rem;
     background: var(--primary-color);
     color: white;
-    border: none;
     border-radius: 6px;
     font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
     font-size: 0.875rem;
     width: 100%;
+    text-align: center;
 }
 
-.view-button:hover {
+.property-card:hover .view-button {
     background: var(--primary-dark);
 }
 

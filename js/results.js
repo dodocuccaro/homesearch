@@ -225,7 +225,7 @@ function createPropertyCard(property) {
                 <div class="platform-name">${property.platform}</div>
                 <div class="property-price">€${property.price}</div>
                 <div class="price-label">per night</div>
-                <button class="view-button" onclick="event.preventDefault(); window.open('${property.externalUrl}', '_blank')">View on ${property.platform}</button>
+                <div class="view-button">View on ${property.platform}</div>
             </div>
         </a>
     `;

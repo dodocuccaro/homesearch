@@ -8,7 +8,9 @@ const properties = [
         rating: 4.9,
         price: 285,
         image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=800&auto=format&fit=crop",
-        description: "Stunning luxury villa overlooking the Aegean Sea with infinity pool and private terrace"
+        description: "Stunning luxury villa overlooking the Aegean Sea with infinity pool and private terrace",
+        platform: "Airbnb",
+        externalUrl: "https://www.airbnb.com"
     },
     {
         id: 2,
@@ -18,7 +20,9 @@ const properties = [
         rating: 4.5,
         price: 45,
         image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=800&auto=format&fit=crop",
-        description: "Perfect studio apartment in the heart of Prague, walking distance to Old Town Square"
+        description: "Perfect studio apartment in the heart of Prague, walking distance to Old Town Square",
+        platform: "Booking.com",
+        externalUrl: "https://www.booking.com"
     },
     {
         id: 3,
@@ -28,7 +32,9 @@ const properties = [
         rating: 4.8,
         price: 195,
         image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=800&auto=format&fit=crop",
-        description: "Chic modern loft with stunning views of the Eiffel Tower from the rooftop terrace"
+        description: "Chic modern loft with stunning views of the Eiffel Tower from the rooftop terrace",
+        platform: "VRBO",
+        externalUrl: "https://www.vrbo.com"
     },
     {
         id: 4,
@@ -38,7 +44,9 @@ const properties = [
         rating: 4.7,
         price: 120,
         image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=800&auto=format&fit=crop",
-        description: "Charming beachfront bungalow with direct access to golden sand beaches"
+        description: "Charming beachfront bungalow with direct access to golden sand beaches",
+        platform: "Airbnb",
+        externalUrl: "https://www.airbnb.com"
     },
     {
         id: 5,
@@ -48,7 +56,9 @@ const properties = [
         rating: 4.6,
         price: 165,
         image: "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?q=80&w=800&auto=format&fit=crop",
-        description: "Beautiful 17th-century canal house in the Museum Quarter with authentic Dutch charm"
+        description: "Beautiful 17th-century canal house in the Museum Quarter with authentic Dutch charm",
+        platform: "Booking.com",
+        externalUrl: "https://www.booking.com"
     },
     {
         id: 6,
@@ -58,7 +68,9 @@ const properties = [
         rating: 4.2,
         price: 35,
         image: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=800&auto=format&fit=crop",
-        description: "Clean, comfortable private room in vibrant hostel near Gothic Quarter"
+        description: "Clean, comfortable private room in vibrant hostel near Gothic Quarter",
+        platform: "Hostelworld",
+        externalUrl: "https://www.hostelworld.com"
     },
     {
         id: 7,
@@ -68,7 +80,9 @@ const properties = [
         rating: 5.0,
         price: 320,
         image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=800&auto=format&fit=crop",
-        description: "Exclusive alpine chalet with breathtaking mountain views and private sauna"
+        description: "Exclusive alpine chalet with breathtaking mountain views and private sauna",
+        platform: "VRBO",
+        externalUrl: "https://www.vrbo.com"
     },
     {
         id: 8,
@@ -78,7 +92,9 @@ const properties = [
         rating: 4.8,
         price: 140,
         image: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=800&auto=format&fit=crop",
-        description: "Authentic Tuscan farmhouse surrounded by vineyards and olive groves"
+        description: "Authentic Tuscan farmhouse surrounded by vineyards and olive groves",
+        platform: "Airbnb",
+        externalUrl: "https://www.airbnb.com"
     },
     {
         id: 9,
@@ -88,7 +104,9 @@ const properties = [
         rating: 4.7,
         price: 175,
         image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop",
-        description: "Elegant suite in boutique hotel with baroque architecture and spa facilities"
+        description: "Elegant suite in boutique hotel with baroque architecture and spa facilities",
+        platform: "Booking.com",
+        externalUrl: "https://www.booking.com"
     },
     {
         id: 10,
@@ -98,7 +116,9 @@ const properties = [
         rating: 4.4,
         price: 68,
         image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=800&auto=format&fit=crop",
-        description: "Spacious apartment overlooking the Danube River with modern amenities"
+        description: "Spacious apartment overlooking the Danube River with modern amenities",
+        platform: "Airbnb",
+        externalUrl: "https://www.airbnb.com"
     },
     {
         id: 11,
@@ -108,7 +128,9 @@ const properties = [
         rating: 4.9,
         price: 210,
         image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop",
-        description: "Luxury penthouse with panoramic views of the Acropolis and city skyline"
+        description: "Luxury penthouse with panoramic views of the Acropolis and city skyline",
+        platform: "VRBO",
+        externalUrl: "https://www.vrbo.com"
     },
     {
         id: 12,
@@ -118,7 +140,9 @@ const properties = [
         rating: 4.6,
         price: 95,
         image: "https://images.unsplash.com/photo-1464146072230-91cabc968266?q=80&w=800&auto=format&fit=crop",
-        description: "Unique eco-friendly treehouse experience in the heart of Black Forest"
+        description: "Unique eco-friendly treehouse experience in the heart of Black Forest",
+        platform: "Airbnb",
+        externalUrl: "https://www.airbnb.com"
     },
     {
         id: 13,
@@ -128,7 +152,9 @@ const properties = [
         rating: 4.5,
         price: 110,
         image: "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?q=80&w=800&auto=format&fit=crop",
-        description: "Charming coastal cottage with garden and short walk to sandy beaches"
+        description: "Charming coastal cottage with garden and short walk to sandy beaches",
+        platform: "Booking.com",
+        externalUrl: "https://www.booking.com"
     },
     {
         id: 14,
@@ -138,7 +164,9 @@ const properties = [
         rating: 4.3,
         price: 88,
         image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop",
-        description: "Stylish designer apartment in trendy Mitte district with rooftop access"
+        description: "Stylish designer apartment in trendy Mitte district with rooftop access",
+        platform: "Airbnb",
+        externalUrl: "https://www.airbnb.com"
     },
     {
         id: 15,
@@ -148,7 +176,9 @@ const properties = [
         rating: 5.0,
         price: 299,
         image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=800&auto=format&fit=crop",
-        description: "Stay in a real Scottish castle with period furnishings and modern comfort"
+        description: "Stay in a real Scottish castle with period furnishings and modern comfort",
+        platform: "VRBO",
+        externalUrl: "https://www.vrbo.com"
     }
 ];
 
@@ -172,35 +202,32 @@ function generateStars(rating) {
 // Create property card HTML
 function createPropertyCard(property) {
     return `
-        <div class="property-card">
+        <a href="${property.externalUrl}" target="_blank" rel="noopener noreferrer" class="property-card">
             <img src="${property.image}" alt="${property.name}" class="property-image" loading="lazy">
             <div class="property-content">
-                <div class="property-header">
-                    <div>
-                        <h3 class="property-title">${property.name}</h3>
-                        <div class="property-location">
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M7 1C4.24 1 2 3.24 2 6C2 9.25 7 13 7 13C7 13 12 9.25 12 6C12 3.24 9.76 1 7 1ZM7 7.5C6.17 7.5 5.5 6.83 5.5 6C5.5 5.17 6.17 4.5 7 4.5C7.83 4.5 8.5 5.17 8.5 6C8.5 6.83 7.83 7.5 7 7.5Z" fill="currentColor"/>
-                            </svg>
-                            ${property.location}
-                        </div>
+                <div class="property-info">
+                    <h3 class="property-title">${property.name}</h3>
+                    <div class="property-location">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 1C4.24 1 2 3.24 2 6C2 9.25 7 13 7 13C7 13 12 9.25 12 6C12 3.24 9.76 1 7 1ZM7 7.5C6.17 7.5 5.5 6.83 5.5 6C5.5 5.17 6.17 4.5 7 4.5C7.83 4.5 8.5 5.17 8.5 6C8.5 6.83 7.83 7.5 7 7.5Z" fill="currentColor"/>
+                        </svg>
+                        ${property.location}
                     </div>
+                    <span class="property-type">${property.type}</span>
+                    <p class="property-description">${property.description}</p>
                     <div class="property-rating">
                         ${generateStars(property.rating)}
                         <span>${property.rating}</span>
                     </div>
                 </div>
-                <span class="property-type">${property.type}</span>
-                <p class="property-description">${property.description}</p>
-                <div class="property-footer">
-                    <div>
-                        <div class="property-price">€${property.price}</div>
-                        <div class="price-label">per night</div>
-                    </div>
-                    <button class="view-button" onclick="viewProperty(${property.id})">View Details</button>
-                </div>
             </div>
-        </div>
+            <div class="property-platform">
+                <div class="platform-name">${property.platform}</div>
+                <div class="property-price">€${property.price}</div>
+                <div class="price-label">per night</div>
+                <button class="view-button" onclick="event.preventDefault(); window.open('${property.externalUrl}', '_blank')">View on ${property.platform}</button>
+            </div>
+        </a>
     `;
 }
 
@@ -232,11 +259,11 @@ function displayResults(searchParams) {
     document.getElementById('resultsCount').textContent = `${sortedProperties.length} properties found`;
 }
 
-// View property details (placeholder function)
+// View property details (placeholder function) - now opens external URL
 function viewProperty(propertyId) {
     const property = properties.find(p => p.id === propertyId);
     if (property) {
-        alert(`Viewing details for: ${property.name}\n\nIn a real application, this would open a detailed page for this property.`);
+        window.open(property.externalUrl, '_blank');
     }
 }
 

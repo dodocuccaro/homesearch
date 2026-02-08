@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find and compare the best holiday accommodations at the lowest prices">
+    <title>HomeSearch - Find Your Perfect Holiday Stay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 2L3 12V30H13V20H19V30H29V12L16 2Z" fill="currentColor"/>
+                    </svg>
+                    <span>HomeSearch</span>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="active">Search</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="container">
+                    <h1 class="hero-title">Find Your Perfect Holiday Stay</h1>
+                    <p class="hero-subtitle">Compare prices from thousands of accommodations across Europe</p>
+                    
+                    <div class="search-card">
+                        <form id="searchForm" class="search-form">
+                            <div class="search-inputs">
+                                <div class="input-group">
+                                    <label for="destination">Where</label>
+                                    <input 
+                                        type="text" 
+                                        id="destination" 
+                                        name="destination" 
+                                        placeholder="Search destinations..." 
+                                        required
+                                    >
+                                </div>
+                                
+                                <div class="input-group">
+                                    <label for="checkin">Check-in</label>
+                                    <input 
+                                        type="date" 
+                                        id="checkin" 
+                                        name="checkin" 
+                                        required
+                                    >
+                                </div>
+                                
+                                <div class="input-group">
+                                    <label for="checkout">Check-out</label>
+                                    <input 
+                                        type="date" 
+                                        id="checkout" 
+                                        name="checkout" 
+                                        required
+                                    >
+                                </div>
+                                
+                                <div class="input-group">
+                                    <label for="guests">Guests</label>
+                                    <select id="guests" name="guests" required>
+                                        <option value="1">1 guest</option>
+                                        <option value="2" selected>2 guests</option>
+                                        <option value="3">3 guests</option>
+                                        <option value="4">4 guests</option>
+                                        <option value="5">5 guests</option>
+                                        <option value="6">6 guests</option>
+                                        <option value="7">7 guests</option>
+                                        <option value="8">8+ guests</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="search-button">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 2C5.13 2 2 5.13 2 9C2 12.87 5.13 16 9 16C10.57 16 12.03 15.42 13.17 14.49L17.29 18.61C17.68 19 18.31 19 18.7 18.61C19.09 18.22 19.09 17.59 18.7 17.2L14.58 13.08C15.51 11.94 16.09 10.48 16.09 8.91C16.09 5.04 12.96 1.91 9.09 1.91L9 2ZM9 4C11.88 4 14.18 6.3 14.18 9.18C14.18 12.06 11.88 14.36 9 14.36C6.12 14.36 3.82 12.06 3.82 9.18C3.82 6.3 6.12 4 9 4Z" fill="currentColor"/>
+                                </svg>
+                                Search
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Why Choose HomeSearch?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <h3>Best Prices</h3>
+                        <p>Compare prices from multiple providers to find the best deals on accommodations</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌍</div>
+                        <h3>Wide Selection</h3>
+                        <p>Choose from thousands of properties across Europe's most beautiful destinations</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⭐</div>
+                        <h3>Verified Reviews</h3>
+                        <p>Read authentic reviews from real travelers to make informed decisions</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Secure Booking</h3>
+                        <p>Book with confidence knowing your data and payments are protected</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>HomeSearch</h4>
+                    <p>Your trusted holiday accommodation comparison platform</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Popular Destinations</h4>
+                    <ul>
+                        <li><a href="#">Paris, France</a></li>
+                        <li><a href="#">Rome, Italy</a></li>
+                        <li><a href="#">Barcelona, Spain</a></li>
+                        <li><a href="#">Amsterdam, Netherlands</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HomeSearch. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/search.js"></script>
+</body>
+</html>

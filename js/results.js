@@ -1,7 +1,10 @@
-// Global variables
+// Global variables for service instances
 let apiService = null;
 let mapService = null;
 let currentView = 'list'; // 'list' or 'map'
+
+// Constants
+const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
 
 // Generate star rating HTML
 function generateStars(rating) {
@@ -92,7 +95,7 @@ async function displayResults(searchParams) {
         if (searchParams) {
             const checkinDate = new Date(searchParams.checkin);
             const checkoutDate = new Date(searchParams.checkout);
-            const nights = Math.ceil((checkoutDate - checkinDate) / (1000 * 60 * 60 * 24));
+            const nights = Math.ceil((checkoutDate - checkinDate) / MILLISECONDS_PER_DAY);
             
             searchInfo.textContent = `${searchParams.destination} • ${searchParams.checkin} to ${searchParams.checkout} • ${searchParams.guests} guest${searchParams.guests > 1 ? 's' : ''} • ${nights} night${nights > 1 ? 's' : ''}`;
         }

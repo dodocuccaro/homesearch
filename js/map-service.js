@@ -1,6 +1,10 @@
 // Map Service for displaying properties on an interactive map
 // Uses Leaflet.js (open-source alternative to Google Maps)
 
+// Constants
+const HIGHLIGHT_DURATION_MS = 3000;
+const MAP_RESIZE_DELAY_MS = 100;
+
 class MapService {
     constructor(containerId, config) {
         this.containerId = containerId;
@@ -58,9 +62,9 @@ class MapService {
         // Create bounds to fit all markers
         const bounds = [];
 
-        properties.forEach((property, index) => {
+        properties.forEach(property => {
             if (property.lat && property.lng) {
-                const marker = this.createPropertyMarker(property, index);
+                const marker = this.createPropertyMarker(property);
                 this.markers.push(marker);
                 this.markerCluster.addLayer(marker);
                 bounds.push([property.lat, property.lng]);
@@ -79,7 +83,7 @@ class MapService {
     /**
      * Create a marker for a property
      */
-    createPropertyMarker(property, index) {
+    createPropertyMarker(property) {
         // Create custom icon with price
         const iconHtml = `
             <div class="map-marker" data-property-id="${property.id}">
@@ -118,6 +122,10 @@ class MapService {
      * Create popup content for a property
      */
     createPopupContent(property) {
+        // Generate star rating (consistent with main display)
+        const fullStars = Math.floor(property.rating);
+        const stars = '⭐'.repeat(fullStars);
+        
         return `
             <div class="map-popup-content">
                 <img src="${property.image}" alt="${property.name}" class="popup-image">
@@ -125,7 +133,7 @@ class MapService {
                     <h4>${property.name}</h4>
                     <p class="popup-location">${property.location}</p>
                     <div class="popup-rating">
-                        ${'⭐'.repeat(Math.floor(property.rating))} ${property.rating}
+                        ${stars} ${property.rating}
                     </div>
                     <div class="popup-price">
                         <span class="price-value">€${property.price}</span>
@@ -156,10 +164,10 @@ class MapService {
             // Scroll to the card
             card.scrollIntoView({ behavior: 'smooth', block: 'center' });
             
-            // Remove highlight after 3 seconds
+            // Remove highlight after duration
             setTimeout(() => {
                 card.classList.remove('highlighted');
-            }, 3000);
+            }, HIGHLIGHT_DURATION_MS);
         }
     }
 
@@ -209,7 +217,7 @@ class MapService {
             if (this.map) {
                 setTimeout(() => {
                     this.map.invalidateSize();
-                }, 100);
+                }, MAP_RESIZE_DELAY_MS);
             }
         } else {
             mapContainer.style.display = 'none';

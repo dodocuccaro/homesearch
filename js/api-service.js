@@ -420,24 +420,23 @@ class PropertyAPIService {
      * Remove duplicate properties based on name and location similarity
      */
     deduplicateProperties(properties) {
-        const seen = new Map();
+        const uniqueMap = new Map();
         
-        return properties.filter(property => {
+        properties.forEach(property => {
             const key = `${property.name.toLowerCase()}-${property.location.toLowerCase()}`;
             
-            if (seen.has(key)) {
-                // Keep the one with better price or rating
-                const existing = seen.get(key);
+            if (!uniqueMap.has(key)) {
+                uniqueMap.set(key, property);
+            } else {
+                // Keep the one with better price
+                const existing = uniqueMap.get(key);
                 if (property.price < existing.price) {
-                    seen.set(key, property);
-                    return true;
+                    uniqueMap.set(key, property);
                 }
-                return false;
             }
-            
-            seen.set(key, property);
-            return true;
         });
+        
+        return Array.from(uniqueMap.values());
     }
 
     /**

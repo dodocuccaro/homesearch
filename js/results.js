@@ -100,15 +100,30 @@ async function displayResults(searchParams) {
         // Update results count
         document.getElementById('resultsCount').textContent = `${sortedProperties.length} properties found`;
         
-        // Initialize map if map container exists
-        if (typeof MAP_CONFIG !== 'undefined' && typeof MapService !== 'undefined') {
+        // Initialize map if map container exists and Leaflet is available
+        if (typeof MAP_CONFIG !== 'undefined' && typeof MapService !== 'undefined' && typeof L !== 'undefined') {
             const mapContainer = document.getElementById('mapContainer');
             if (mapContainer && !mapService) {
-                mapService = new MapService('mapContainer', MAP_CONFIG);
-                await mapService.initMap();
-                mapService.addProperties(sortedProperties);
+                try {
+                    mapService = new MapService('mapContainer', MAP_CONFIG);
+                    await mapService.initMap();
+                    mapService.addProperties(sortedProperties);
+                } catch (error) {
+                    console.warn('Map initialization failed:', error);
+                    // Hide map controls if map failed to initialize
+                    const mapViewBtn = document.getElementById('mapViewBtn');
+                    if (mapViewBtn) {
+                        mapViewBtn.style.display = 'none';
+                    }
+                }
             } else if (mapService) {
                 mapService.addProperties(sortedProperties);
+            }
+        } else {
+            // Hide map controls if Leaflet is not available
+            const mapViewBtn = document.getElementById('mapViewBtn');
+            if (mapViewBtn) {
+                mapViewBtn.style.display = 'none';
             }
         }
         

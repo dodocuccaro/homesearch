@@ -3,6 +3,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchForm = document.getElementById('searchForm');
     const checkinInput = document.getElementById('checkin');
     const checkoutInput = document.getElementById('checkout');
+    const destinationSelect = document.getElementById('destination');
+
+    // Populate destination dropdown from the destinations repository
+    if (typeof DESTINATIONS !== 'undefined') {
+        DESTINATIONS.forEach(function(dest) {
+            const option = document.createElement('option');
+            option.value = dest.value;
+            option.textContent = dest.label;
+            destinationSelect.appendChild(option);
+        });
+    }
 
     // Set minimum date to today
     const today = new Date().toISOString().split('T')[0];
@@ -27,7 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
 
         // Get form values
-        const destination = document.getElementById('destination').value;
+        const destination = destinationSelect.value
+            ? destinationSelect.options[destinationSelect.selectedIndex].text
+            : '';
         const checkin = checkinInput.value;
         const checkout = checkoutInput.value;
         const guests = document.getElementById('guests').value;
@@ -61,7 +74,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (savedSearch) {
         try {
             const params = JSON.parse(savedSearch);
-            document.getElementById('destination').value = params.destination || '';
+            // Restore destination by matching the stored label against option text
+            for (let i = 0; i < destinationSelect.options.length; i++) {
+                if (destinationSelect.options[i].text === params.destination) {
+                    destinationSelect.selectedIndex = i;
+                    break;
+                }
+            }
             checkinInput.value = params.checkin || '';
             checkoutInput.value = params.checkout || '';
             document.getElementById('guests').value = params.guests || '2';

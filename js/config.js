@@ -1,28 +1,43 @@
 // API Configuration
-// In a production environment, these would be environment variables
+// =================
+//
+// HOW TO GET REAL HOTEL AVAILABILITY DATA (Booking.com):
+//
+//   This app uses RapidAPI to access live Booking.com hotel data.
+//   RapidAPI is a free API marketplace – no partnership with Booking.com required.
+//
+//   Steps to enable real data:
+//     1. Create a FREE account at https://rapidapi.com
+//     2. Go to https://rapidapi.com/apidojo/api/booking-com15 and click "Subscribe to Test"
+//        (free tier available – check current limits on the RapidAPI page)
+//     3. Copy your "X-RapidAPI-Key" shown in the code examples on that page
+//     4. Paste it below to replace 'YOUR_RAPIDAPI_KEY'
+//     5. Set  useMockData: false
+//
+//   Without a real key the app shows sample/demo data.
+//
 const API_CONFIG = {
-    // API endpoints for different platforms
+    // RapidAPI – Booking.com hotel search (free tier available, no partnership needed)
+    rapidapi: {
+        enabled: true,
+        apiKey: 'YOUR_RAPIDAPI_KEY', // ← paste your key from rapidapi.com here
+        host: 'booking-com15.p.rapidapi.com',
+        useMockData: true            // ← change to false once you have your key
+    },
+
+    // NOTE: Airbnb does not offer a public API (official partnership required).
     airbnb: {
         enabled: true,
-        // Note: Real Airbnb API requires partnership agreement
-        // This is a placeholder for the implementation
         baseUrl: 'https://api.airbnb.com/v3',
-        apiKey: 'YOUR_AIRBNB_API_KEY', // Replace with actual key when ready
-        // For development, we'll use mock data
+        apiKey: 'YOUR_AIRBNB_API_KEY',
         useMockData: true
     },
-    booking: {
-        enabled: true,
-        // Booking.com provides API access through their affiliate program
-        baseUrl: 'https://distribution-xml.booking.com/2.9/json',
-        apiKey: 'YOUR_BOOKING_API_KEY', // Replace with actual key when ready
-        useMockData: true
-    },
-    // Future platform integrations
+
+    // NOTE: VRBO does not offer a public API (official partnership required).
     vrbo: {
         enabled: false,
         baseUrl: 'https://api.vrbo.com/v1',
-        apiKey: 'YOUR_VRBO_API_KEY', // Replace with actual key when ready
+        apiKey: 'YOUR_VRBO_API_KEY',
         useMockData: true
     }
 };

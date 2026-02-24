@@ -12,8 +12,23 @@ class PropertyAPIService {
      * @returns {Promise<Array>} - Combined and sorted property results
      */
     async searchProperties(searchParams) {
-        const { destination, checkin, checkout, guests } = searchParams;
-        
+        // If a real RapidAPI key is configured, use it for live Booking.com data
+        if (
+            this.config.rapidapi &&
+            this.config.rapidapi.enabled &&
+            !this.config.rapidapi.useMockData &&
+            this.config.rapidapi.apiKey !== 'YOUR_RAPIDAPI_KEY'
+        ) {
+            try {
+                const results = await this.searchRapidAPIBooking(searchParams);
+                if (results.length > 0) {
+                    return this.sortByPrice(results);
+                }
+            } catch (error) {
+                console.error('RapidAPI search failed, falling back to mock data:', error);
+            }
+        }
+
         try {
             // Start searches on all enabled platforms in parallel
             const searchPromises = [];
@@ -21,12 +36,11 @@ class PropertyAPIService {
             if (this.config.airbnb.enabled) {
                 searchPromises.push(this.searchAirbnb(searchParams));
             }
+
+            // Always include Booking.com sample data in demo mode
+            searchPromises.push(this.getBookingMockData(searchParams));
             
-            if (this.config.booking.enabled) {
-                searchPromises.push(this.searchBooking(searchParams));
-            }
-            
-            if (this.config.vrbo.enabled) {
+            if (this.config.vrbo && this.config.vrbo.enabled) {
                 searchPromises.push(this.searchVRBO(searchParams));
             }
             
@@ -53,6 +67,85 @@ class PropertyAPIService {
             console.error('Error searching properties:', error);
             throw error;
         }
+    }
+
+    /**
+     * Search Booking.com hotels via RapidAPI (real live data).
+     *
+     * To use this method set  config.rapidapi.useMockData = false  and supply
+     * a valid apiKey from https://rapidapi.com/apidojo/api/booking-com15
+     */
+    async searchRapidAPIBooking(searchParams) {
+        const { destination, checkin, checkout, guests } = searchParams;
+        const headers = {
+            'X-RapidAPI-Key': this.config.rapidapi.apiKey,
+            'X-RapidAPI-Host': this.config.rapidapi.host
+        };
+
+        // Step 1: Resolve destination to a Booking.com dest_id
+        const destUrl = `https://${this.config.rapidapi.host}/api/v1/hotels/searchDestination?query=${encodeURIComponent(destination)}`;
+        const destResponse = await fetch(destUrl, { headers });
+        if (!destResponse.ok) {
+            throw new Error(`Destination search failed: ${destResponse.status}`);
+        }
+        const destData = await destResponse.json();
+        if (!destData.data || destData.data.length === 0) {
+            throw new Error(`No destination found for "${destination}"`);
+        }
+        const dest = destData.data[0];
+
+        // Step 2: Search for available hotels
+        const searchUrl = new URL(`https://${this.config.rapidapi.host}/api/v1/hotels/searchHotels`);
+        searchUrl.searchParams.set('dest_id', dest.dest_id);
+        searchUrl.searchParams.set('search_type', dest.dest_type || 'CITY');
+        searchUrl.searchParams.set('arrival_date', checkin);
+        searchUrl.searchParams.set('departure_date', checkout);
+        searchUrl.searchParams.set('adults', guests);
+        searchUrl.searchParams.set('room_qty', '1');
+        searchUrl.searchParams.set('units', 'metric');
+        searchUrl.searchParams.set('page_number', '1');
+        searchUrl.searchParams.set('currency_code', 'EUR');
+
+        const hotelsResponse = await fetch(searchUrl.toString(), { headers });
+        if (!hotelsResponse.ok) {
+            throw new Error(`Hotel search failed: ${hotelsResponse.status}`);
+        }
+        const hotelsData = await hotelsResponse.json();
+        const hotels = (hotelsData.data && hotelsData.data.hotels) ? hotelsData.data.hotels : [];
+        return this.normalizeRapidAPIData(hotels);
+    }
+
+    /**
+     * Normalize RapidAPI Booking.com hotel objects to the common property format
+     */
+    normalizeRapidAPIData(hotels) {
+        return hotels
+            .map(hotel => {
+                const prop = hotel.property || {};
+                const price = prop.priceBreakdown && prop.priceBreakdown.grossPrice
+                    ? Math.round(prop.priceBreakdown.grossPrice.value)
+                    : 0;
+                return {
+                    id: `booking-${hotel.hotel_id}`,
+                    name: prop.name || 'Unknown Hotel',
+                    location: [prop.wishlistName, prop.countryCode]
+                        .filter(Boolean).join(', '),
+                    type: 'Hotel',
+                    rating: prop.reviewScore ? parseFloat(prop.reviewScore) : 0,
+                    price: price,
+                    image: (prop.photoUrls && prop.photoUrls[0])
+                        ? prop.photoUrls[0]
+                        : 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop',
+                    description: prop.reviewScoreWord
+                        ? `${prop.reviewScoreWord} · ${prop.reviewCount || ''} reviews`
+                        : (prop.name || ''),
+                    platform: 'Booking.com',
+                    externalUrl: `https://www.booking.com/hotel/${hotel.hotel_id}.html`,
+                    lat: prop.latitude || null,
+                    lng: prop.longitude || null
+                };
+            })
+            .filter(h => h.price > 0);
     }
 
     /**
@@ -87,37 +180,6 @@ class PropertyAPIService {
             return this.normalizeAirbnbData(data);
         } catch (error) {
             console.error('Airbnb API error:', error);
-            return [];
-        }
-    }
-
-    /**
-     * Search Booking.com properties
-     */
-    async searchBooking(searchParams) {
-        if (this.config.booking.useMockData) {
-            return this.getBookingMockData(searchParams);
-        }
-        
-        // Real API implementation would go here
-        try {
-            const response = await fetch(`${this.config.booking.baseUrl}/hotels`, {
-                method: 'GET',
-                headers: {
-                    'Authorization': `Basic ${btoa(this.config.booking.apiKey)}`,
-                    'Content-Type': 'application/json'
-                },
-                // Query parameters would be added here
-            });
-            
-            if (!response.ok) {
-                throw new Error(`Booking.com API error: ${response.status}`);
-            }
-            
-            const data = await response.json();
-            return this.normalizeBookingData(data);
-        } catch (error) {
-            console.error('Booking.com API error:', error);
             return [];
         }
     }
@@ -256,7 +318,7 @@ class PropertyAPIService {
     }
 
     /**
-     * Get mock Booking.com data for development/testing
+     * Get sample Booking.com data for demo/testing
      */
     getBookingMockData(searchParams) {
         return new Promise(resolve => {
@@ -324,8 +386,22 @@ class PropertyAPIService {
     }
 
     /**
-     * Get mock VRBO data for development/testing
+     * Normalize Airbnb API response to common format
      */
+    normalizeAirbnbData(data) {
+        // Transform Airbnb-specific format to our common format
+        // This would depend on the actual Airbnb API response structure
+        return data;
+    }
+
+    /**
+     * Normalize VRBO API response to common format
+     */
+    normalizeVRBOData(data) {
+        // Transform VRBO-specific format to our common format
+        return data;
+    }
+
     getVRBOMockData(searchParams) {
         return new Promise(resolve => {
             setTimeout(() => {
@@ -389,31 +465,6 @@ class PropertyAPIService {
                 ]);
             }, 550);
         });
-    }
-
-    /**
-     * Normalize Airbnb API response to common format
-     */
-    normalizeAirbnbData(data) {
-        // Transform Airbnb-specific format to our common format
-        // This would depend on the actual Airbnb API response structure
-        return data;
-    }
-
-    /**
-     * Normalize Booking.com API response to common format
-     */
-    normalizeBookingData(data) {
-        // Transform Booking.com-specific format to our common format
-        return data;
-    }
-
-    /**
-     * Normalize VRBO API response to common format
-     */
-    normalizeVRBOData(data) {
-        // Transform VRBO-specific format to our common format
-        return data;
     }
 
     /**

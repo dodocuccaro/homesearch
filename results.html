@@ -8,6 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Leaflet CSS for maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -43,6 +47,20 @@
 
             <div class="results-info">
                 <p id="resultsCount" class="results-count"></p>
+                <div class="view-controls">
+                    <button id="listViewBtn" class="view-btn active" title="List View">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 4H17M3 10H17M3 16H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        List
+                    </button>
+                    <button id="mapViewBtn" class="view-btn" title="Map View">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 6V17L7 14L13 17L19 14V3L13 6L7 3L1 6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Map
+                    </button>
+                </div>
                 <div class="sort-info">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M8 2L8 14M8 14L12 10M8 14L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -51,6 +69,16 @@
                 </div>
             </div>
 
+            <!-- Loading Indicator -->
+            <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+                <div class="spinner"></div>
+                <p>Searching properties across multiple platforms...</p>
+            </div>
+
+            <!-- Map Container -->
+            <div id="mapContainer" class="map-container" style="display: none;"></div>
+
+            <!-- Results Grid -->
             <div id="resultsContainer" class="results-grid">
                 <!-- Results will be dynamically inserted here -->
             </div>
@@ -100,6 +128,14 @@
         </div>
     </footer>
 
+    <!-- Leaflet JS for maps -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    
+    <!-- Application Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/api-service.js"></script>
+    <script src="js/map-service.js"></script>
     <script src="js/results.js"></script>
 </body>
 </html>

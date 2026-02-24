@@ -32,12 +32,16 @@ A modern, responsive holiday accommodation search and comparison website inspire
 
 - **Beautiful Landing Page**: Hero section with search form overlay inspired by leading travel platforms
 - **Smart Search Form**: Intuitive search with destination, check-in/check-out dates, and guest selection
-- **Property Listings**: 15 diverse mock properties across European destinations
+- **Multi-Platform Search**: Search across Airbnb, Booking.com, and VRBO simultaneously
+- **Result Merging & Deduplication**: Combines results from multiple platforms and removes duplicates
 - **Automatic Sorting**: Results automatically sorted by price (cheapest first)
+- **Interactive Map View**: Display properties on an interactive map with Leaflet.js
+- **List/Map Toggle**: Switch between list and map views of search results
 - **Responsive Design**: Mobile-first approach ensuring perfect display on all devices
 - **Modern UI/UX**: Clean, professional design with smooth transitions and hover effects
 - **Date Validation**: Intelligent date picker with automatic validation
 - **Session Persistence**: Search parameters saved during browsing session
+- **API Integration Ready**: Modular architecture supporting real API integration
 
 ## 📋 Property Features
 
@@ -97,12 +101,16 @@ cd homesearch
 ```
 homesearch/
 ├── index.html          # Home page with search interface
-├── results.html        # Results page with property listings
+├── results.html        # Results page with property listings and map
 ├── css/
-│   └── style.css      # Complete styling (responsive design)
+│   └── style.css      # Complete styling (responsive design + map styles)
 ├── js/
 │   ├── search.js      # Search form logic and validation
-│   └── results.js     # Results display and mock data
+│   ├── results.js     # Results display controller
+│   ├── config.js      # API configuration
+│   ├── api-service.js # Multi-platform API service layer
+│   └── map-service.js # Map integration with Leaflet.js
+├── API-INTEGRATION-GUIDE.md  # Comprehensive API integration guide
 └── README.md          # Documentation (this file)
 ```
 
@@ -125,10 +133,27 @@ homesearch/
 - **HTML5**: Semantic markup
 - **CSS3**: Flexbox and Grid layouts, CSS variables, animations
 - **Vanilla JavaScript**: No frameworks or libraries required
+- **Leaflet.js**: Open-source interactive map library
 - **Google Fonts**: Inter font family
 - **Unsplash**: High-quality property images
 
 ### Key Features Implementation
+
+#### Multi-Platform API Integration (`api-service.js`)
+- Parallel searches across multiple platforms (Airbnb, Booking.com, VRBO)
+- Promise-based async operations with `Promise.allSettled()`
+- Automatic result merging and deduplication
+- Price-based sorting of combined results
+- Mock data mode for development/testing
+- Extensible adapter pattern for adding new platforms
+
+#### Interactive Map (`map-service.js`)
+- Leaflet.js for map rendering
+- Marker clustering for better performance
+- Custom price markers for each property
+- Property popups with images and details
+- Click-to-highlight property cards
+- List/Map view toggle functionality
 
 #### Search Form (`search.js`)
 - Date validation (check-out must be after check-in)
@@ -137,17 +162,18 @@ homesearch/
 - Smooth redirect to results page
 
 #### Results Display (`results.js`)
-- 15 diverse mock properties with realistic data
-- Automatic sorting by price (ascending)
 - Dynamic HTML generation
+- Async property fetching from API service
+- Loading indicators during search
 - Responsive grid layout
 - Star rating system
+- Integration with map service
 
 ## 🔮 Future Enhancements
 
-- [ ] **API Integration**: Connect to real accommodation providers
+- [x] **API Integration**: Modular architecture for connecting to real accommodation providers
+- [x] **Map View**: Interactive map showing property locations with Leaflet.js
 - [ ] **Advanced Filters**: Price range, amenities, property type
-- [ ] **Map View**: Interactive map showing property locations
 - [ ] **User Accounts**: Save favorites and booking history
 - [ ] **Comparison Tool**: Side-by-side property comparison
 - [ ] **Reviews System**: User ratings and reviews
@@ -157,6 +183,7 @@ homesearch/
 - [ ] **Dark Mode**: Theme toggle for better accessibility
 - [ ] **Search History**: Recently searched destinations
 - [ ] **Email Alerts**: Price drop notifications
+- [ ] **Real API Keys**: Connect to actual booking platform APIs (see API-INTEGRATION-GUIDE.md)
 
 ## 📱 Browser Compatibility
 

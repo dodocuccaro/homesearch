@@ -15,8 +15,9 @@ const API_CONFIG = {
         enabled: true,
         // Booking.com provides API access through their affiliate program
         baseUrl: 'https://distribution-xml.booking.com/2.9/json',
-        apiKey: 'YOUR_BOOKING_API_KEY', // Replace with actual key when ready
-        useMockData: true
+        apiKey: 'fb4900e267mshc72956dabe1e23fp12fefdjsn862210343379', // Replace with actual key when ready
+        useMockData: false
+    
     },
     // Future platform integrations
     vrbo: {
